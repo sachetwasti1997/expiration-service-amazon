@@ -27,7 +27,7 @@ public class KafkaListenerConfig {
         LOGGER.info("Expiring: {}", orderCreatedEventModal);
         assert orderCreatedEventModal != null;
         OrderExpiredEvent orderExpiredEvent = new OrderExpiredEvent(orderCreatedEventModal.getOrderId(),
-                orderCreatedEventModal.getItemId());
+                orderCreatedEventModal.getItemId(), orderCreatedEventModal.getOrderPrice());
         orderExpiredEventPublisher.orderExpireEvent(orderExpiredEvent);
     }
 }

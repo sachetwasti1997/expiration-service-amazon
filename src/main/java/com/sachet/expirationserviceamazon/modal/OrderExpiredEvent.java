@@ -10,4 +10,5 @@ import lombok.NoArgsConstructor;
 public class OrderExpiredEvent {
     private String orderId;
     private String itemId;
+    private Double orderPrice;
 }

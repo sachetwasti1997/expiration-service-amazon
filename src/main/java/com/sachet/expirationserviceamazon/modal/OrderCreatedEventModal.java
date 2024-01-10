@@ -1,6 +1,7 @@
 package com.sachet.expirationserviceamazon.modal;
 
 import lombok.*;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 import org.springframework.data.redis.core.TimeToLive;
 
@@ -14,6 +15,7 @@ import java.util.concurrent.TimeUnit;
 @Data
 @ToString
 public class OrderCreatedEventModal {
+    @Id
     private String orderId;
     private String status;
     @TimeToLive(unit = TimeUnit.MILLISECONDS)
