@@ -58,4 +58,13 @@ public class ConsumerConfig {
         factory.getContainerProperties().setAckMode(ContainerProperties.AckMode.MANUAL);
         return factory;
     }
+
+    @Bean
+    ConcurrentKafkaListenerContainerFactory<String,String> kafkaPaymentStatusListenerContainerFactory() {
+        ConcurrentKafkaListenerContainerFactory<String, String> factory
+                = new ConcurrentKafkaListenerContainerFactory<>();
+        factory.setConsumerFactory(createConsumerFactory());
+        factory.getContainerProperties().setAckMode(ContainerProperties.AckMode.MANUAL);
+        return factory;
+    }
 }

@@ -4,6 +4,7 @@ spring:
     ordercreatedtopic: "orderevent"
     ordercancelledeventtopic: "ordercancelled"
     expireordertopic: "expireorder"
+    paymentTopic: "paymentStatusTopic"
     orderexpireconsumers:
       group-id: order-expiration-handlers
     consumer:
